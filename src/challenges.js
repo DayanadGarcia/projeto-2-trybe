@@ -1,11 +1,17 @@
 // Desafio 1
-function compareTrue() {
-  // seu código aqui
+function compareTrue(valor1, valor2) {
+  let compare = false;
+  if (valor1 == true && valor2 == true) {
+    compare = true;
+  }
+  return compare;
+  console.log (compare);
 }
 
 // Desafio 2
-function calcArea() {
-  // seu código aqui
+function calcArea(base, height) {
+  let area = (base * height) / 2;
+  return area;
 }
 
 // Desafio 3
@@ -42,6 +48,7 @@ function fizzBuzz() {
 function encode() {
   // seu código aqui
 }
+
 function decode() {
   // seu código aqui
 }
