@@ -23,7 +23,7 @@ function splitSentence(arrStr) {
 function concatName(arrString) {
   let last = arrString[arrString.length - 1];
   let first = arrString[0];
-  return (last, first);
+  return (last + ", " + first);
 }
 
 // Desafio 5
@@ -42,9 +42,12 @@ function highestCount() {
 // Desafio 7
 function catAndMouse(mouse, cat1, cat2) {
   let msg;
-  if (cat1 > cat2) {
+  let distCat1 = mouse - cat1;
+  let distCat2 = mouse - cat2;
+
+  if (distCat1 > distCat2) {
     msg = console.log('cat1');
-  } else if (cat1 == cat2) {
+  } else if (distCat1 == distCat2) {
     msg = console.log('os gatos trombam e o rato foge');
   } else {
     msg = console.log('cat2');
