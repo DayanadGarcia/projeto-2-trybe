@@ -5,7 +5,6 @@ function compareTrue(valor1, valor2) {
     compare = true;
   }
   return compare;
-  console.log (compare);
 }
 
 // Desafio 2
@@ -15,28 +14,61 @@ function calcArea(base, height) {
 }
 
 // Desafio 3
-function splitSentence() {
-  // seu código aqui
+function splitSentence(arrStr) {
+  let frase = arrStr.split(' ');
+  return console.log(frase);
 }
 
 // Desafio 4
-function concatName() {
-  // seu código aqui
+function concatName(arrString) {
+  let last = arrString[arrString.length - 1];
+  let first = arrString[0];
+  return (console.log(last, first));
 }
 
 // Desafio 5
-function footballPoints() {
-  // seu código aqui
+function footballPoints(wins, ties) {
+  let cont = wins * 3;
+  let points = cont + ties;
+  return points;
 }
 
 // Desafio 6
-function highestCount() {
-  // seu código aqui
+
+function highestCount(arrNumbers) {
+
+  let highNumber = arrNumbers[0];
+  let qntsMaior = 0;
+
+  for (let i of arrNumbers) {
+    if (i > highNumber) {
+      highNumber = i;
+    }
+
+  }
+  console.log(highNumber);
+
+  for (let cont = 0; cont < arrNumbers.length; cont++) {
+    if (arrNumbers[cont] == cont) {
+      qntsMaior++;
+    }
+  }
+  return console.log(qntsMaior);
+
 }
+highestCount([1, 2, 3, 5, 5, 4, 6, 7, 7, 7, 7]);
 
 // Desafio 7
-function catAndMouse() {
-  // seu código aqui
+function catAndMouse(mouse, cat1, cat2) {
+  let msg;
+  if (cat1 > cat2) {
+    msg = console.log('cat1');
+  } else if (cat1 == cat2) {
+    msg = console.log('os gatos trombam e o rato foge');
+  } else {
+    msg = console.log('cat2');
+  }
+  return msg;
 }
 
 // Desafio 8
