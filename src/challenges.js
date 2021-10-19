@@ -46,11 +46,11 @@ function catAndMouse(mouse, cat1, cat2) {
   let distCat2 = mouse - cat2;
 
   if (distCat1 > distCat2) {
-    msg = 'cat1';
+    msg = 'cat2';
   } else if (distCat1 === distCat2) {
     msg = 'os gatos trombam e o rato foge';
   } else {
-    msg = 'cat2';
+    msg = 'cat1';
   }
   return msg;
 }
