@@ -44,7 +44,7 @@ function highestCount(numeros) {
   }
   for (let cont = 0; cont < numeros.length; cont += 1) {
     if (highestNumber == numeros[cont]) {
-      vezes +=1;
+      vezes += 1;
     }
   }
   return vezes;
@@ -72,8 +72,23 @@ function catAndMouse(mouse, cat1, cat2) {
 }
 
 // Desafio 8
-function fizzBuzz() {
-  // seu código aqui
+function fizzBuzz(numeros) {
+  let arrResultado = [];
+  for (let index = 0; index < numeros.length; index++) {
+    if (numeros[index] % 3 == 0) {
+      arrResultado[index] = "fizz";
+    }
+    if (numeros[index] % 5 == 0) {
+      arrResultado[index] = "buzz";
+    }
+    if (numeros[index] % 3 == 0 && numeros[index] % 5 == 0) {
+      arrResultado[index] = "fizzBuzz";
+    }
+    if (!(numeros[index] % 3 == 0) && !(numeros[index] % 5 == 0)) {
+      arrResultado[index] = "bug!";
+    }
+  }
+  return arrResultado;
 }
 
 // Desafio 9
