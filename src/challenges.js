@@ -92,12 +92,40 @@ function fizzBuzz(numeros) {
 }
 
 // Desafio 9
-function encode() {
-  // seu código aqui
+function encode(palavras) {
+  let palavraSplit = palavras.split('');
+  for (let index = 0; index < palavraSplit.length; index++) {
+    if (palavraSplit[index] == 'a') {
+     palavraSplit[index] = 1;
+    } else if (palavraSplit[index] == 'e') {
+      palavraSplit[index] = 2;
+    } else if (palavraSplit[index] == 'i') {
+      palavraSplit[index] = 3;
+    } else if (palavraSplit[index] == 'o') {
+      palavraSplit[index] = 4;
+    } else if (palavraSplit[index] == 'u') {
+      palavraSplit[index] = 5;
+    }
+  }
+  return (palavraSplit.join(""));
 }
 
-function decode() {
-  // seu código aqui
+function decode(codigo) {
+  let codigoSplit = codigo.split('');
+  for (let index = 0; index < codigoSplit.length; index++) {
+    if (codigoSplit[index] == 1) {
+      codigoSplit[index] = 'a';
+    } else if (codigoSplit[index] == 2) {
+      codigoSplit[index] = 'e';
+    } else if (codigoSplit[index] == 3) {
+      codigoSplit[index] = 'i';
+    } else if (codigoSplit[index] == 4) {
+      codigoSplit[index] = 'o';
+    } else if (codigoSplit[index] == 5) {
+      codigoSplit[index] = 'u';
+    }
+  }
+  return (codigoSplit.join(""));
 }
 
 module.exports = {
