@@ -26,9 +26,7 @@ function concatName(arrString) {
 
 // Desafio 5
 function footballPoints(wins, ties) {
-  let cont = wins * 3;
-  let points = cont + ties;
-  return points;
+  return wins * 3 + ties;
 }
 
 // Desafio 6
