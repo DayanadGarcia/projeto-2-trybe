@@ -43,7 +43,7 @@ function highestCount(numeros) {
 
 // Desafio 7
 function catAndMouse(mouse, cat1, cat2) {
-  let msg;
+  let msg = 'os gatos trombam e o rato foge';
   let distCat1 = mouse - cat1;
   let distCat2 = mouse - cat2;
 
@@ -56,76 +56,65 @@ function catAndMouse(mouse, cat1, cat2) {
     msg = 'cat2';
   } else if (distCat2 > distCat1) {
     msg = 'cat1';
-  } else {
-    msg = 'os gatos trombam e o rato foge';
   }
   return msg;
 }
 
 // Desafio 8
 function fizzBuzz(numeros) {
-  let arrResultado = [];
-  for (let index = 0; index < numeros.length; index++) {
-    if (numeros[index] % 3 == 0) {
-      arrResultado[index] = 'fizz';
-    }
-    if (numeros[index] % 5 == 0) {
-      arrResultado[index] = 'buzz';
-    }
-    if (numeros[index] % 3 == 0 && numeros[index] % 5 == 0) {
-      arrResultado[index] = 'fizzBuzz';
-    }
-    if (numeros[index] % 3 != 0 && numeros[index] % 5 != 0) {
-      arrResultado[index] = 'bug!';
-    }
+  for (let i = 0; i < numeros.length; i += 1) {
+    if (numeros[i] % 3 === 0 && numeros[i] % 5 === 0) numeros[i] = 'fizzBuzz';
+    else if (numeros[i] % 3 === 0) numeros[i] = 'fizz';
+    else if (numeros[i] % 5 === 0) numeros[i] = 'buzz';
+    else numeros[i] = 'bug!';
   }
-  return arrResultado;
+  return numeros;
 }
 
 // Desafio 9
-function encode(palavras) {
-  let palavraSplit = palavras.split('');
-  for (let index = 0; index < palavraSplit.length; index++) {
-    if (palavraSplit[index] == 'a') {
-      palavraSplit[index] = 1;
-    } else if (palavraSplit[index] == 'e') {
-      palavraSplit[index] = 2;
-    } else if (palavraSplit[index] == 'i') {
-      palavraSplit[index] = 3;
-    } else if (palavraSplit[index] == 'o') {
-      palavraSplit[index] = 4;
-    } else if (palavraSplit[index] == 'u') {
-      palavraSplit[index] = 5;
-    }
-  }
-  return (palavraSplit.join(''));
-}
+// function encode(palavras) {
+//   let palavraSplit = palavras.split('');
+//   for (let index = 0; index < palavraSplit.length; index++) {
+//     if (palavraSplit[index] == 'a') {
+//       palavraSplit[index] = 1;
+//     } else if (palavraSplit[index] == 'e') {
+//       palavraSplit[index] = 2;
+//     } else if (palavraSplit[index] == 'i') {
+//       palavraSplit[index] = 3;
+//     } else if (palavraSplit[index] == 'o') {
+//       palavraSplit[index] = 4;
+//     } else if (palavraSplit[index] == 'u') {
+//       palavraSplit[index] = 5;
+//     }
+//   }
+//   return (palavraSplit.join(''));
+// }
 
-function decode(codigo) {
-  let codigoSplit = codigo.split('');
-  for (let index = 0; index < codigoSplit.length; index++) {
-    if (codigoSplit[index] == 1) {
-      codigoSplit[index] = 'a';
-    } else if (codigoSplit[index] == 2) {
-      codigoSplit[index] = 'e';
-    } else if (codigoSplit[index] == 3) {
-      codigoSplit[index] = 'i';
-    } else if (codigoSplit[index] == 4) {
-      codigoSplit[index] = 'o';
-    } else if (codigoSplit[index] == 5) {
-      codigoSplit[index] = 'u';
-    }
-  }
-  return (codigoSplit.join(''));
-}
+// function decode(codigo) {
+//   let codigoSplit = codigo.split('');
+//   for (let index = 0; index < codigoSplit.length; index++) {
+//     if (codigoSplit[index] == 1) {
+//       codigoSplit[index] = 'a';
+//     } else if (codigoSplit[index] == 2) {
+//       codigoSplit[index] = 'e';
+//     } else if (codigoSplit[index] == 3) {
+//       codigoSplit[index] = 'i';
+//     } else if (codigoSplit[index] == 4) {
+//       codigoSplit[index] = 'o';
+//     } else if (codigoSplit[index] == 5) {
+//       codigoSplit[index] = 'u';
+//     }
+//   }
+//   return (codigoSplit.join(''));
+// }
 
 module.exports = {
   calcArea,
   catAndMouse,
   compareTrue,
   concatName,
-  decode,
-  encode,
+  // decode,
+  // encode,
   fizzBuzz,
   footballPoints,
   highestCount,
