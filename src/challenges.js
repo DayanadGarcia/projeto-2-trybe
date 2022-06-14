@@ -1,10 +1,9 @@
 // Desafio 1
 function compareTrue(valor1, valor2) {
-  let compare = false;
-  if (valor1 == true && valor2 == true) {
-    compare = true;
+  if (valor1 && valor2) {
+    return true;
   }
-  return compare;
+  return false;
 }
 
 // Desafio 2
@@ -15,15 +14,14 @@ function calcArea(base, height) {
 
 // Desafio 3
 function splitSentence(arrStr) {
-  let frase = arrStr.split(' ');
-  return frase;
+  return arrStr.split(' ');
 }
 
 // Desafio 4
 function concatName(arrString) {
   let last = arrString[arrString.length - 1];
   let first = arrString[0];
-  return (last + ", " + first);
+  return (`${last}, ${first}`);
 }
 
 // Desafio 5
@@ -57,9 +55,9 @@ function catAndMouse(mouse, cat1, cat2) {
   let distCat2 = mouse - cat2;
 
   if (distCat1 < 0) {
-    distCat1 = distCat1 * (-1);
+    distCat1 *= (-1);
   } else if (distCat2 < 0) {
-    distCat2 = distCat2 * (-1);
+    distCat2 *= (-1);
   }
   if (distCat1 > distCat2) {
     msg = 'cat2';
@@ -76,16 +74,16 @@ function fizzBuzz(numeros) {
   let arrResultado = [];
   for (let index = 0; index < numeros.length; index++) {
     if (numeros[index] % 3 == 0) {
-      arrResultado[index] = "fizz";
+      arrResultado[index] = 'fizz';
     }
     if (numeros[index] % 5 == 0) {
-      arrResultado[index] = "buzz";
+      arrResultado[index] = 'buzz';
     }
     if (numeros[index] % 3 == 0 && numeros[index] % 5 == 0) {
-      arrResultado[index] = "fizzBuzz";
+      arrResultado[index] = 'fizzBuzz';
     }
-    if (!(numeros[index] % 3 == 0) && !(numeros[index] % 5 == 0)) {
-      arrResultado[index] = "bug!";
+    if (numeros[index] % 3 != 0 && numeros[index] % 5 != 0) {
+      arrResultado[index] = 'bug!';
     }
   }
   return arrResultado;
@@ -96,7 +94,7 @@ function encode(palavras) {
   let palavraSplit = palavras.split('');
   for (let index = 0; index < palavraSplit.length; index++) {
     if (palavraSplit[index] == 'a') {
-     palavraSplit[index] = 1;
+      palavraSplit[index] = 1;
     } else if (palavraSplit[index] == 'e') {
       palavraSplit[index] = 2;
     } else if (palavraSplit[index] == 'i') {
@@ -107,7 +105,7 @@ function encode(palavras) {
       palavraSplit[index] = 5;
     }
   }
-  return (palavraSplit.join(""));
+  return (palavraSplit.join(''));
 }
 
 function decode(codigo) {
@@ -125,7 +123,7 @@ function decode(codigo) {
       codigoSplit[index] = 'u';
     }
   }
-  return (codigoSplit.join(""));
+  return (codigoSplit.join(''));
 }
 
 module.exports = {
