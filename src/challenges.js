@@ -72,49 +72,37 @@ function fizzBuzz(numeros) {
 }
 
 // Desafio 9
-// function encode(palavras) {
-//   let palavraSplit = palavras.split('');
-//   for (let index = 0; index < palavraSplit.length; index++) {
-//     if (palavraSplit[index] == 'a') {
-//       palavraSplit[index] = 1;
-//     } else if (palavraSplit[index] == 'e') {
-//       palavraSplit[index] = 2;
-//     } else if (palavraSplit[index] == 'i') {
-//       palavraSplit[index] = 3;
-//     } else if (palavraSplit[index] == 'o') {
-//       palavraSplit[index] = 4;
-//     } else if (palavraSplit[index] == 'u') {
-//       palavraSplit[index] = 5;
-//     }
-//   }
-//   return (palavraSplit.join(''));
-// }
+function encode(palavras) {
+  let palavraSplit = palavras.split(''); // array de strings
+  for (let i = 0; i < palavraSplit.length; i += 1) {
+    if (palavraSplit[i] === 'a') palavraSplit[i] = 1;
+    else if (palavraSplit[i] === 'e') palavraSplit[i] = 2;
+    else if (palavraSplit[i] === 'i') palavraSplit[i] = 3;
+    else if (palavraSplit[i] === 'o') palavraSplit[i] = 4;
+    else if (palavraSplit[i] === 'u') palavraSplit[i] = 5;
+  }
+  return palavraSplit.join('');
+}
 
-// function decode(codigo) {
-//   let codigoSplit = codigo.split('');
-//   for (let index = 0; index < codigoSplit.length; index++) {
-//     if (codigoSplit[index] == 1) {
-//       codigoSplit[index] = 'a';
-//     } else if (codigoSplit[index] == 2) {
-//       codigoSplit[index] = 'e';
-//     } else if (codigoSplit[index] == 3) {
-//       codigoSplit[index] = 'i';
-//     } else if (codigoSplit[index] == 4) {
-//       codigoSplit[index] = 'o';
-//     } else if (codigoSplit[index] == 5) {
-//       codigoSplit[index] = 'u';
-//     }
-//   }
-//   return (codigoSplit.join(''));
-// }
+function decode(codigo) {
+  let codigoSplit = codigo.split('');
+  for (let i = 0; i < codigoSplit.length; i += 1) {
+    if (codigoSplit[i] === '1') codigoSplit[i] = 'a';
+    else if (codigoSplit[i] === '2') codigoSplit[i] = 'e';
+    else if (codigoSplit[i] === '3') codigoSplit[i] = 'i';
+    else if (codigoSplit[i] === '4') codigoSplit[i] = 'o';
+    else if (codigoSplit[i] === '5') codigoSplit[i] = 'u';
+  }
+  return codigoSplit.join('');
+}
 
 module.exports = {
   calcArea,
   catAndMouse,
   compareTrue,
   concatName,
-  // decode,
-  // encode,
+  encode,
+  decode,
   fizzBuzz,
   footballPoints,
   highestCount,
