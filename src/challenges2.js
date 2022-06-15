@@ -10,25 +10,52 @@ function techList(tech, name) {
   return myObj;
 }
 
-// // Desafio 11
-// function generatePhoneNumber(numbers) {
-//   let telefone = [];
-//   let numCompleto;
-//   for (let i = 0; i < numbers.length; i++) {
-//     telefone[i] = numbers[i];
-//     if (telefone[i] < 0) {
-//       return "não é possível gerar um número de telefone com esses valores";
-//     }else if (telefone[i] > 9){
-//       return "não é possível gerar um número de telefone com esses valores";
-//     }else if (telefone[i] == telefone[i] && telefone[i] == telefone[i] && telefone[i] == telefone[i] ){
-//       return "não é possível gerar um número de telefone com esses valores";
-//     }else if (telefone !== 11) {
-//     return "Array com tamanho incorreto.";
-//     }
-//   }
-//   numCompleto = ("(" + telefone[0] telefone[0]+ ")" telefone[0] telefone[0] telefone[0] telefone[0] telefone[0]
-//   return numCompleto;
-// }
+function lengthNumber(num) { // faz parte do desafio 11
+  let dif = false;
+  if (num.length !== 11) dif = true;
+  return dif;
+}
+
+function moreThanLessThan(num) { // faz parte do desafio 11
+  let moreLess = false;
+  for (let i = 0; i < num.length; i += 1) {
+    if (num[i] < 0 || num[i] > 9) moreLess = true;
+  }
+  return moreLess;
+}
+
+function repeatedNumbers(num, arr) { // faz parte do desafio 11
+  let count = 0;
+  for (let i = 0; i < arr.length; i += 1) {
+    if (arr[i] === num) count += 1;
+  }
+  if (count >= 3) return true;
+  return false;
+}
+
+function itemOfArray(array) { // faz parte do desafio 11
+  for (const n of array) {
+    if (repeatedNumbers(n, array)) {
+      return true;
+    }
+  }
+  return false;
+}
+
+// Desafio 11
+function generatePhoneNumber(numbers) {
+  if (lengthNumber(numbers) === true) {
+    return 'Array com tamanho incorreto.';
+  }
+  if (moreThanLessThan(numbers) === true || itemOfArray(numbers) === true) {
+    return 'não é possível gerar um número de telefone com esses valores';
+  }
+  let mask = '(xx) xxxxx-xxxx';
+  numbers.forEach((num) => {
+    mask = mask.replace('x', num);
+  });
+  return mask;
+}
 
 // // Desafio 12
 // function triangleCheck() {
@@ -42,7 +69,7 @@ function techList(tech, name) {
 // }
 
 module.exports = {
-  // generatePhoneNumber,
+  generatePhoneNumber,
   techList,
   // hydrate,
   // triangleCheck,
